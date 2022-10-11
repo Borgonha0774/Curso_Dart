@@ -31,4 +31,8 @@ void metodoWhereFiltro() {
   print(nt);
   var nst = notas.where(notasSuperTop);
   print(nst);
+
+  print("Others formatt function Anonimous");
+  var othersAplicationWhere = notas.where((nota) => nota >= 11);
+  print(othersAplicationWhere);
 }
