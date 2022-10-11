@@ -1,8 +1,17 @@
 void main(List<String> args) {
+  var media = [1.2, 4.5, 3.8, 9.0, 8.5, 7.1];
   print("Metodo procedural: For");
   metodoTradicionalFiltro();
   print("\nMetodo Dart: Where");
   metodoWhereFiltro();
+  print("\n Criando o metodo where => javascript filter");
+  var notasRuins = (double nota) => nota <= 7;
+  print(filterWhere(media, notasRuins));
+  print(filterWhere(media, (p0) => p0 > 7));
+
+  print("Como usamos generics podemos passar uma lista de strings");
+  var name = ["Pedro", "João", "Maria", "Leo", "joaquim"];
+  print(filterWhere(name, (p0) => p0.length > 5));
 }
 
 //método procedural
@@ -35,4 +44,14 @@ void metodoWhereFiltro() {
   print("Others formatt function Anonimous");
   var othersAplicationWhere = notas.where((nota) => nota >= 11);
   print(othersAplicationWhere);
+}
+
+List<T> filterWhere<T>(List<T> list, bool Function(T) fn) {
+  List<T> listFilter = [];
+  for (T element in list) {
+    if (fn(element)) {
+      listFilter.add(element);
+    }
+  }
+  return listFilter;
 }
