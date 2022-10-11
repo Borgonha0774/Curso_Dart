@@ -22,4 +22,13 @@ void main(List<String> args) {
   var result =
       alunos.map((name) => name['nome'] as String).map((e) => e.length);
   print(result);
+
+  print('\n APLICAÇÃO DO MAP E REDUCE');
+  var total = alunos
+      .map((e) => e['nota'])
+      .map((e) => (e as double).roundToDouble())
+      .where((element) => element >= 8)
+      .reduce((acc, el) => acc + el);
+
+  print(total);
 }
