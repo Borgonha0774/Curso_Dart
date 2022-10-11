@@ -20,7 +20,15 @@ void metodoTradicionalFiltro() {
 void metodoWhereFiltro() {
   var notas = [8.2, 7.1, 6.6, 2.9, 10.7, 3.9, 12.8, 1.5];
 
-  bool Function(double) notasBoasFn = (double nota) => nota >= 8.3;
+  print("\nMetodos de uso WHERE");
+  bool Function(double) notasBoasFn = (double nota) => nota >= 7;
   var notasBoas = notas.where((nota) => notasBoasFn(nota));
   print(notasBoas);
+
+  var notasTop = (double nota) => nota >= 8;
+  var notasSuperTop = (double nota) => nota >= 10;
+  var nt = notas.where(notasTop);
+  print(nt);
+  var nst = notas.where(notasSuperTop);
+  print(nst);
 }
