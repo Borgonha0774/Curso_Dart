@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main(List<String> args) {
   int result = SumFn(1, 3);
   print("O resultado é: $result");
@@ -21,6 +23,13 @@ void main(List<String> args) {
 
   ParametrosSemObrigacoes();
   ParametrosSemObrigacoes(100, 200);
+
+  //funcoes são passadas como parametros
+  print("\nfuncoes são passadas como parametros");
+  var parFn = () => print("O valor é par!!");
+  var imparFn = () => print("O valor é impar!!");
+
+  executar(parFn, imparFn);
 }
 
 int SumFn(int a, int b) {
@@ -30,4 +39,8 @@ int SumFn(int a, int b) {
 //Parametros opcinais com valor default
 void ParametrosSemObrigacoes([int a = 0, int b = 0]) {
   print("Parametros sem obrigações: ${a + b}");
+}
+
+void executar(Function fnPar, Function fnImpar) {
+  Random().nextInt(10) % 2 == 0 ? fnPar() : fnImpar();
 }
