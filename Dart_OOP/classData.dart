@@ -1,3 +1,5 @@
+import '../model/pessoa.dart';
+
 class Data {
   //Objetos de instancia
   late int dia;
@@ -61,4 +63,6 @@ void main(List<String> args) {
   print(newData.getData());
 
   print(Data.ultimoDiaDoAno(2028));
+  var p1 = new Pessoa(idade: 28, nome: "Augusto");
+  print('${p1.nome} tem ${p1.idade} anos');
 }
