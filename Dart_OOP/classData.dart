@@ -1,7 +1,13 @@
 class Data {
+  //Objetos de instancia
   late int dia;
   late int mes;
   late int ano;
+
+  //Metodos
+  String getData() {
+    return ("${dia}/${mes}/${ano}");
+  }
 }
 
 void main(List<String> args) {
@@ -17,6 +23,8 @@ void main(List<String> args) {
   dataCompra.mes = 12;
   dataCompra.ano = 2008;
 
-  print("${dataAniversario.dia}/${dataAniversario.mes}/${dataAniversario.ano}");
-  print("${dataCompra.dia}/${dataCompra.mes}/${dataCompra.ano}");
+  /* print("${dataAniversario.dia}/${dataAniversario.mes}/${dataAniversario.ano}");
+  print("${dataCompra.dia}/${dataCompra.mes}/${dataCompra.ano}"); */
+  print(dataAniversario.getData());
+  print(dataCompra.getData());
 }
