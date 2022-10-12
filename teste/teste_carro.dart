@@ -1,4 +1,4 @@
-import '../modelo/carro.dart';
+import '../model/carro.dart';
 
 void main(List<String> args) {
   var fiatUno = new Carro();
